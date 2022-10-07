@@ -13,15 +13,24 @@ public class ControllerCamera : MonoBehaviour
     {
         //string nameOfSpawn = player.name + "/PlayerSphere";
         //playerSpawned = GameObject.Find(nameOfSpawn);
-        playerSpawned = GameObject.Find("PlayerSphere");
+        /*playerSpawned = GameObject.Find("PlayerSphere");
         Debug.Log(playerSpawned);
-        offset = transform.position - playerSpawned.transform.position;
+        offset = transform.position - playerSpawned.transform.position;*/
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = playerSpawned.transform.position + offset;
-        Debug.Log(playerSpawned.transform.position);
+        if(playerSpawned == null)
+        {
+            playerSpawned = GameObject.Find("PlayerSphere");
+            //Debug.Log(playerSpawned);
+            if (playerSpawned != null) offset = transform.position - playerSpawned.transform.position;
+        }
+        else
+        {
+            transform.position = playerSpawned.transform.position + offset;
+            //Debug.Log(playerSpawned.transform.position);
+        }
     }
 }
