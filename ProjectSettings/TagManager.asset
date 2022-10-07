@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - t_wall
+  - t_player
   layers:
   - Default
   - TransparentFX
