@@ -23,12 +23,12 @@ public class ControllerCamera : MonoBehaviour
     {
         if(playerSpawned == null)
         {
-            playerSpawned = GameObject.Find("PlayerSphere");
-            //Debug.Log(playerSpawned);
+            playerSpawned = GameObject.Find("PlayerSphere");            
             if (playerSpawned != null) offset = transform.position - playerSpawned.transform.position;
         }
         else
         {
+            Debug.Log("A player spawned: " + playerSpawned);
             transform.position = playerSpawned.transform.position + offset;
             //Debug.Log(playerSpawned.transform.position);
         }
